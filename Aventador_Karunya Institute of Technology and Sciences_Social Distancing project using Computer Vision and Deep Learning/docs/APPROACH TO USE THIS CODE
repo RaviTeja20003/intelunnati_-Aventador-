@@ -1,0 +1,41 @@
+# To run the code file present in social distance with openvino 
+STEPS ::
+1)INSTALL ANACONDA 
+
+2)OPEN ANACONDA PROMPT
+
+3)CREATE A SEPERATE CONDA ENVIRONMENT
+>FOLLOW THESE LINES OF CODE::
+>>conda create --name [Virtual Environment Name] python=[Version you want to install]
+>>conda activate [Virtual Environment Name]
+
+(OR) CHECK IN THIS DOCUMENT FOR CREATING A SEPERATE CONDA ENVIRONMENT >>https://www.machinelearningplus.com/deployment/conda-create-environment-and-everything-you-need-to-know-to-manage-conda-virtual-environment/
+
+4)OPEN JUPYTER NOTEBOOK BY INSTALLING IT EIGHTER FROM ANACONDA NAVIGATOR OR FROM THE ANACONDA PROMPT
+
+4)INSTALL OPENVINO TOOLKIT BY FOLLOWING THE BELOW GIVEN LINK  :
+>https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download.html?ENVIRONMENT=DEV_TOOLS&OP_SYSTEM=WINDOWS&VERSION=v_2023_0&DISTRIBUTION=PIP
+
+5)DOWNLOAD INTEL OPENVINO PRETRAINED MODEL XML AND BIN FILES:
+>This is a person detector that is based on MobileNetV2 backbone with two SSD heads from 1/16 and 1/8 scale feature maps and clustered prior boxes for 512x512 resolution.
+
+> MODEL NAME : person-detection-0202 ,
+
+> MODEL_INFO_LINK : https://docs.openvino.ai/2023.0/omz_models_model_person_detection_0202.html
+
+> MODEL_DOWNLOAD_INFO : https://docs.openvino.ai/2022.3/omz_tools_downloader.html
+>>MODEL DOWNLOAD PROCEDURE::
+1)OPEN ANACONDA PROMPT AND ACTIVATE CONDA ENVIRONMENT OF OPENVINO CREATED PREVIOUSLY WHERE INSTALLED THE OPENVINO PACKAGES
+2)USE THE FOLLOWING CODE TO DOWNLOAD THE PERSON-DETECTION-0202 MODEL AFTER ACTIVATING CONDA ENVIRONMENT
+>>omz_downloader --help
+>>omz_downloader --print_all
+>>omz_downloader --name person-detection-0202
+
+6) ONES THE MODEL IS DOWNLOADED THEN PASS THE XML AND BIN FILES PATH IN THE CODE, THEN RUN THE CODE, TO SEE THE OUTPUT
+
+7) REQUIREMENTS
+>anaconda
+>jupyter notebook
+>install opencv,openvino
+>load the xml and bin files path of pretrained model correctly,
+>upload the video path.
